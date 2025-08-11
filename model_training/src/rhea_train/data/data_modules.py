@@ -20,7 +20,7 @@ def build_loaders(data_cfg, seed:int, batch_size:int, random_multiplier:int,
     scaler, X_tr = fit_standard_scaler(X_tr)
     X_te = apply_standard_scaler(scaler, X_te)
 
-    # torch tensors (y shape Nx1 like your code)
+    # torch tensors
     X_tr = torch.from_numpy(X_tr.astype(np.float32))
     y_tr = torch.from_numpy(y_tr.astype(np.float32)).view(-1,1)
     w_tr = torch.from_numpy(w_tr.astype(np.float32)).view(-1,1)
