@@ -9,7 +9,6 @@ from rhea_train.engine.trainer_bce import train_once
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--config", default="configs/config.yaml")
-    # overrides (like your grid)
     ap.add_argument("--seed", type=int, default=43)
     ap.add_argument("--num_layers", type=int, default=None)
     ap.add_argument("--hidden_size", type=int, default=None)
@@ -50,12 +49,12 @@ def main():
         device=("cuda" if torch.cuda.is_available() else "cpu")
     )
 
-    # save checkpoint like your tag
+    # save checkpoint
     tag = f"S{args.seed}_L{mcfg['num_layers']}_HS{mcfg['hidden_size']}_DR{mcfg['dropout']}_WD{wd}_BS{bs}_RM{args.random_multiplier}"
     os.makedirs("artifacts/checkpoints", exist_ok=True)
     torch.save(model.state_dict(), f"artifacts/checkpoints/{tag}.pt")
 
-    # print final metrics like your script
+    # print final metrics
     final = hist[-1]
     print(f"seed={args.seed} rm={args.random_multiplier} layers={mcfg['num_layers']} hs={mcfg['hidden_size']} "
           f"dr={mcfg['dropout']} wd={wd} lr={lr} bs={bs} | "
@@ -63,7 +62,7 @@ def main():
           f"BEST thr={sweep['thr']:.2f} Prec {sweep['prec']:.4f} Rec {sweep['rec']:.4f} F1 {sweep['f1']:.4f} | "
           f"Epochs {int(final[0])} Time N/A")
 
-    # save history if you want
+    # save history
     os.makedirs("artifacts/results", exist_ok=True)
     np.save("artifacts/results/last_run.npy", hist)
 
