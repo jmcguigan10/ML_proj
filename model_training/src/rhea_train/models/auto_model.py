@@ -5,7 +5,7 @@ from .nn_blocks import DenseBNReLUDrop
 @register("auto_model")
 class AutoModel(nn.Module):
     """
-    Your BinaryClassifier from full_nn.py:
+    BinaryClassifier from full_nn.py:
     Linear -> BN -> ReLU -> Dropout (num_layers times), then Linear -> 1
     """
     def __init__(self, input_size: int, num_layers: int, hidden_size: int, dropout: float, **_):
