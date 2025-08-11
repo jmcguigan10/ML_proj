@@ -29,5 +29,5 @@ export PYTHONPATH=$PWD/src:$PYTHONPATH
 #      --seed 43 --num_layers 6 --hidden_size 384 --dropout 0.01 \
 #      --lr 5e-3 --wd 1e-4 --bs 32768 --random_multiplier 10
 
-# Full grid search (replicates your full_nn.py loops; writes results9.npy)
+# Full grid search (replicates full_nn.py loops; writes results9.npy)
 srun python -m rhea_train.grid_search --config configs/config.yaml
