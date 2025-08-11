@@ -2,7 +2,7 @@ import argparse, os, numpy as np, torch
 from rhea_train.utils.config import load_config
 from rhea_train.utils.randomness import seed_all, set_deterministic
 from rhea_train.utils.logging import get_logger
-from rhea_train.data.datamodules import build_loaders
+from rhea_train.data.data_modules import build_loaders
 from rhea_train.models.registry import create_model
 from rhea_train.engine.trainer_bce import train_once
 
