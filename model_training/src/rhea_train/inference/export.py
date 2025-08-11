@@ -20,7 +20,7 @@ if __name__ == "__main__":
     ap.add_argument("--ckpt", required=True)
     ap.add_argument("--config", default="configs/config.yaml")
     ap.add_argument("--out", default="../../example_model.pt")  # repo root default
-    ap.add_argument("--example", default="1,128")               # e.g., "1,128"
+    ap.add_argument("--example", default="1,27")              #should be modle input size
     a = ap.parse_args()
     shape = tuple(int(x) for x in a.example.split(","))
     export_torchscript(a.ckpt, a.config, a.out, shape)
