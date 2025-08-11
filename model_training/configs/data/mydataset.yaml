@@ -1,0 +1,25 @@
+# Point these at your repo’s four NPZ files
+root_dir: "."  # relative to model_training/; can be absolute
+npz_files:
+  zerofluxfac: "train_data/train_data_stable_zerofluxfac.npz"
+  oneflavor:   "train_data/train_data_stable_oneflavor.npz"
+  random:      "train_data/train_data_random.npz"
+  NSM:         "train_data/train_data_NSM_stable.npz"
+keys:
+  X:
+    zerofluxfac: "X_zerofluxfac"
+    oneflavor:   "X_oneflavor"
+    random:      "X_random"
+    NSM:         "X_NSM_stable"
+  y:
+    zerofluxfac: "unstable_zerofluxfac"
+    oneflavor:   "unstable_oneflavor"
+    random:      "unstable_random"
+    NSM:         "unstable_NSM_stable"
+n_samples: 200000               # N_SAMPLES in your script
+test_size: 0.2                  # same split
+batch_size: 32768               # grid will override; set a default here
+num_workers: 4
+pin_memory: true
+
+

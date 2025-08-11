@@ -1,0 +1,28 @@
+epochs: 10000                   # N_EPOCHS
+patience: 50                    # PATIENCE
+
+# Warmup (epochs)
+warmup_epochs: 20               # WARMUP_EPOCHS
+
+# ReduceLROnPlateau
+plateau:
+  factor: 0.5                   # SCHED_FACTOR
+  patience: 15                  # SCHED_PATIENCE
+  cooldown: 5                   # SCHED_COOLDOWN
+  mode: min
+
+# Optimizer
+optimizer:
+  name: adamw
+  lr: 0.005                     # learning_rate default; grid overrides
+  weight_decay: 1e-4            # weight_decay default; grid overrides
+  betas: [0.9, 0.999]
+  eps: 1e-8
+
+# Dataloader seed behavior
+deterministic: true
+
+# Where to save
+ckpt_dir: "artifacts/checkpoints"
+results_path: "artifacts/results/results.npy"
+

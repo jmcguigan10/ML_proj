@@ -1,0 +1,6 @@
+name: auto_model
+input_size: 27                  # INPUT_SIZE
+num_layers: 6                   # default; grid overrides
+hidden_size: 384                # default; grid overrides
+dropout: 0.01                   # dropout_rate
+

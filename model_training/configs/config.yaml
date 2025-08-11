@@ -1,0 +1,8 @@
+seed: 43                         # default; grid overrides per-run
+project_name: rhea_train
+data_cfg: "configs/data/mydataset.yaml"
+model_cfg: "configs/model/auto_model.yaml"
+train_cfg: "configs/train/base.yaml"
+logging: { framework: "stdout" }
+
+
