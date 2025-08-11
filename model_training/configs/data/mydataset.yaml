@@ -1,5 +1,5 @@
-# Point these at your repo’s four NPZ files
-root_dir: "."  # relative to model_training/; can be absolute
+
+root_dir: "."  # relative to model_training
 npz_files:
   zerofluxfac: "train_data/train_data_stable_zerofluxfac.npz"
   oneflavor:   "train_data/train_data_stable_oneflavor.npz"
@@ -16,7 +16,7 @@ keys:
     oneflavor:   "unstable_oneflavor"
     random:      "unstable_random"
     NSM:         "unstable_NSM_stable"
-n_samples: 200000               # N_SAMPLES in your script
+n_samples: 200000               
 test_size: 0.2                  # same split
 batch_size: 32768               # grid will override; set a default here
 num_workers: 4
